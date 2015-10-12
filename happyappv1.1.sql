@@ -47,11 +47,12 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`Monday` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Monday` (
+  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
   `stime` TIME NOT NULL COMMENT '',
   `etime` TIME NOT NULL COMMENT '',
   `food` VARCHAR(255) NULL COMMENT '',
   `drink` VARCHAR(255) NULL COMMENT '',
-  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
+
   PRIMARY KEY (`stime`, `etime`, `Restaurant_restname`)  COMMENT '',
   INDEX `fk_Monday_Restaurant_idx` (`Restaurant_restname` ASC)  COMMENT '',
   CONSTRAINT `fk_Monday_Restaurant`
@@ -68,11 +69,12 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`Tuesday` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Tuesday` (
+  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
   `stime` TIME NOT NULL COMMENT '',
   `etime` TIME NOT NULL COMMENT '',
   `food` VARCHAR(255) NULL COMMENT '',
   `drink` VARCHAR(255) NULL COMMENT '',
-  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
+
   PRIMARY KEY (`stime`, `etime`, `Restaurant_restname`)  COMMENT '',
   INDEX `fk_Tuesday_Restaurant1_idx` (`Restaurant_restname` ASC)  COMMENT '',
   CONSTRAINT `fk_Tuesday_Restaurant1`
@@ -89,11 +91,12 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`Wednesday` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Wednesday` (
+  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
   `stime` TIME NOT NULL COMMENT '',
   `etime` TIME NOT NULL COMMENT '',
   `food` VARCHAR(255) NULL COMMENT '',
   `drink` VARCHAR(255) NULL COMMENT '',
-  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
+
   PRIMARY KEY (`stime`, `etime`, `Restaurant_restname`)  COMMENT '',
   INDEX `fk_Wednesday_Restaurant1_idx` (`Restaurant_restname` ASC)  COMMENT '',
   CONSTRAINT `fk_Wednesday_Restaurant1`
@@ -110,11 +113,12 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`Thursday` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Thursday` (
+  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
   `stime` TIME NOT NULL COMMENT '',
   `etime` TIME NOT NULL COMMENT '',
   `food` VARCHAR(255) NULL COMMENT '',
   `drink` VARCHAR(255) NULL COMMENT '',
-  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
+
   PRIMARY KEY (`stime`, `etime`, `Restaurant_restname`)  COMMENT '',
   INDEX `fk_Thursday_Restaurant1_idx` (`Restaurant_restname` ASC)  COMMENT '',
   CONSTRAINT `fk_Thursday_Restaurant1`
@@ -131,11 +135,12 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`Friday` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Friday` (
+  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',  
   `stime` TIME NOT NULL COMMENT '',
   `etime` TIME NOT NULL COMMENT '',
   `food` VARCHAR(255) NULL COMMENT '',
   `drink` VARCHAR(255) NULL COMMENT '',
-  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
+
   PRIMARY KEY (`stime`, `etime`, `Restaurant_restname`)  COMMENT '',
   INDEX `fk_Friday_Restaurant1_idx` (`Restaurant_restname` ASC)  COMMENT '',
   CONSTRAINT `fk_Friday_Restaurant1`
@@ -152,11 +157,12 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`Saturday` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Saturday` (
+  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
   `stime` TIME NOT NULL COMMENT '',
   `etime` TIME NOT NULL COMMENT '',
   `food` VARCHAR(255) NULL COMMENT '',
   `drink` VARCHAR(255) NULL COMMENT '',
-  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
+
   PRIMARY KEY (`stime`, `etime`, `Restaurant_restname`)  COMMENT '',
   INDEX `fk_Saturday_Restaurant1_idx` (`Restaurant_restname` ASC)  COMMENT '',
   CONSTRAINT `fk_Saturday_Restaurant1`
@@ -173,11 +179,11 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `mydb`.`Sunday` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Sunday` (
+  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
   `stime` TIME NOT NULL COMMENT '',
   `etime` TIME NOT NULL COMMENT '',
   `food` VARCHAR(255) NULL COMMENT '',
   `drink` VARCHAR(255) NULL COMMENT '',
-  `Restaurant_restname` VARCHAR(45) NOT NULL COMMENT '',
   PRIMARY KEY (`stime`, `etime`, `Restaurant_restname`)  COMMENT '',
   INDEX `fk_Sunday_Restaurant1_idx` (`Restaurant_restname` ASC)  COMMENT '',
   CONSTRAINT `fk_Sunday_Restaurant1`
