@@ -23,8 +23,8 @@ USE `mydb` ;
 DROP TABLE IF EXISTS `mydb`.`Restaurant` ;
 
 CREATE TABLE IF NOT EXISTS `mydb`.`Restaurant` (
-  `restname` VARCHAR(45) NOT NULL COMMENT '',
-  `Address` VARCHAR(45) NULL COMMENT '',
+  `restname` VARCHAR(255) NOT NULL COMMENT '',
+  `Address` VARCHAR(255) NULL COMMENT '',
   PRIMARY KEY (`restname`)  COMMENT '')
 ENGINE = InnoDB;
 
