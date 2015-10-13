@@ -49,4 +49,6 @@ INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('The Rib House',' 1801 1
 INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('The Sink',' 1165 13th Street Boulder CO 80302');
 INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Wahoo\'s Fish Taco',' 2790 Pearl Street Boulder CO 80302');
 INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Zolo',' 2525 Arapahoe Avenue Boulder CO 80302');
-INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('','');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Hapa on Pearl','1117 PEarl Street Boulder, CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('The Attic Bar & Grill','949 Walnut St, Boulder, CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Lazy Dog','1346 Pearl Street, Boulder, CO 80302');
