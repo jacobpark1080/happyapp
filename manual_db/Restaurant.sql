@@ -1,0 +1,52 @@
+/*
+-- Query: 
+-- Date: 2015-10-12 22:52
+*/
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Boulder Chophouse & Tavern',' 921 Walnut Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Centro Latin Kitchen',' 950 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Illegal Pete\'s',' 1447 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Salt',' 1047 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Sushi Hana',' 1220 Pennsylvania Ave Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('28th Street Tavern',' 2690 28th Street Boulder CO');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Absinthe House',' 1109 Walnut Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Agave',' 2845 28th Street Boulder CO 80301');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Aji',' 1601 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Arugula Bar & Ristorante',' 2785 Iris Avenue Boulder CO 80304');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Backcountry Pizza & Tap House',' 2319 Arapahoe Avenue Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Black Pepper Pho',' 2770 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Boulder Cafe',' 1247 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Boulder Cork',' 3295 30th Street Boulder CO 80301');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Brasserie Ten Ten',' 1011 Walnut Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Cafe Aion',' 1235 Pennsylvania Avenue Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Catacombs',' 2115 13th Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Conor O\'neills',' 1922 13th Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Corner Bar',' 2115 13th Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Dagabi Cucina',' 3970 N Broadway Street Boulder CO 80305');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Dark Horse',' 2922 Baseline Rd Boulder CO 80303');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Foolish Craig\'s',' 1611 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Georges',' 2028 14th Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Japango',' 1136 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Jax Fish House',' 928 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Jill\'s Restaurant',' 900 Walnut Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Leaf Vegetarian Restaurant',' 2010 16th Street Boulder CO 80303');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Moongate Asian Bistro',' 1628 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Mountain Sun Pub & Brewery',' 1535 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Murphy\'s Grill',' 2731 Iris Ave Boulder CO 80304');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Pasta Jay\'s',' 1001 Pearl Street Bouder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Pear Street Pub',' 1108 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Pizzeria Locale',' 1730 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Press Play',' 1005 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Rio Grande Mexican Restaurant',' Boulder 1101 Walnut Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Rueben\'s Burger Bistro',' 1800 Broadway Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Sherpa\'s',' 825 Walnut Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Sushi Tora',' 2014 10th Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Sushi Zanmai',' 1221 Spruce Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Taco Junky',' 1149 13th Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Tahona Tequilia Bistro',' 1035 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('The Hungry Toad',' 2543 Broadway Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('The Kitchen',' 1039 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('The Rib House',' 1801 13th Street Suite 180 Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('The Sink',' 1165 13th Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Wahoo\'s Fish Taco',' 2790 Pearl Street Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('Zolo',' 2525 Arapahoe Avenue Boulder CO 80302');
+INSERT INTO `Restaurant` (`restname`,`Address`) VALUES ('','');
