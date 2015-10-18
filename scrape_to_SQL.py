@@ -32,10 +32,21 @@ for item in tueInfo:
 		pass
 	i=i+1
 
-for key in gmap.keys():
-	conn = MySQLdb.connect(user="root",db="mydb")
-	query = "INSERT INTO Restaurant (restname) VALUES ("+gmap[key]+")"
-	x = conn.cursor()
-	x.execute(query)
-	row = x.fetchall()
+addrest = ("INSERT INTO Restaurant"
+			  "(restname, address)" 
+			  "VALUES (%s, %s)")
 
+
+
+conn = MySQLdb.connect(user="root",db="mydb")
+x = conn.cursor()
+
+for key in gmap.keys():
+	print gmap[key]	
+	name = gmap[key]
+	add = "temp"
+	datarest = (str(name),str(add))
+	x.execute(addrest, datarest)
+x.close()
+conn.commit()
+conn.close()
