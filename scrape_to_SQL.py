@@ -1,8 +1,8 @@
-#do every day (not just tuesday)
-#import into database
+#isn't actually inserting into database
 #figure out what to do with multiple stimes and etimes
-#insert specials
+#do other days of the week (not just tuesday)
 #get address information
+
 
 import requests
 from bs4 import BeautifulSoup
@@ -60,8 +60,10 @@ for key in gmap.keys():
 
 	time = timemap[key]
 	drink = drinkmap[key]
+	drink = drink.encode('ascii','ignore')
 	try:
 		food = foodmap[key]
+		food = food.encode('ascii','ignore')
 	except:
 		pass
 	
@@ -79,10 +81,10 @@ for key in gmap.keys():
 	et = et.replace(":00"," ")
 	et = et.replace(":30",".5")
 	
-	#data_special = (str(st), str(et), str(drink), str(food))
+	data_special = (str(st), str(et), str(drink), str(food))
 	try:
-		#x.execute(add_special,data_special)
-		pass
+		x.execute(add_special,data_special)
+		#x.execute(addrest,datarest)
 	except:
 		pass
 
