@@ -1,4 +1,4 @@
-#isn't actually inserting into database
+#fix formatting- inserts specials really ugly...
 #figure out what to do with multiple stimes and etimes
 #do other days of the week (not just tuesday)
 #get address information
@@ -40,8 +40,8 @@ addrest = ("INSERT INTO Restaurant"
 			  "(restname, address)" 
 			  "VALUES (%s, %s)")
 add_special = ("INSERT INTO Tuesday" 
-			"(stime, etime,food,drink)"
-			"VALUES (%s, %s, %s, %s)")
+			"(Restaurant_restname, stime, etime,food,drink)"
+			"VALUES (%s, %s, %s, %s, %s)")
 
 
 
@@ -81,7 +81,7 @@ for key in gmap.keys():
 	et = et.replace(":00"," ")
 	et = et.replace(":30",".5")
 	
-	data_special = (str(st), str(et), str(drink), str(food))
+	data_special = (str(name), str(st), str(et), str(drink), str(food))
 	try:
 		x.execute(add_special,data_special)
 		#x.execute(addrest,datarest)
