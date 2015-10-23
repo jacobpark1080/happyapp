@@ -45,7 +45,7 @@ add_special = ("INSERT INTO Tuesday"
 
 
 
-conn = MySQLdb.connect(user="root",db="mydb")
+conn = MySQLdb.connect(user="HappyApp",passwd="password",db="mydb")
 x = conn.cursor()
 
 for key in gmap.keys():
