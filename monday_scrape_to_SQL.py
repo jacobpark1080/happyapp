@@ -43,7 +43,7 @@ addrest = ("INSERT INTO Restaurant"
 
 
 
-conn = MySQLdb.connect(user="root",db="mydb")
+conn = MySQLdb.connect(host="localhost",user="root",db="mydb")
 x = conn.cursor()
 
 for key in gmap.keys():
@@ -68,6 +68,11 @@ for key in gmap.keys():
 	except:
 		pass
 	
+	#try:
+	#	times = time.split(',',1)
+	#	print "SPLIT TIME: ", times[0]
+	#except:
+	#	pass
 	time = time.split('-',1)
 	stime = time[0]
 	try:
@@ -75,14 +80,22 @@ for key in gmap.keys():
 	except:
 		stime = "0:00"
 		etime = "24:00"
-	st = stime.replace("pm","")	
-	st = st.replace(":00"," ")
-	st = st.replace(":30",".5")
-	et = etime.replace("pm","")
-	et = et.replace(":00"," ")
-	et = et.replace(":30",".5")
-	
-	data_special = (str(name), str(st), str(et), str(Drinks), str(Foods))
+	print name
+	if (name != "Eggloo Delights ") and (name != "Murphy's Grill"):
+		st = stime
+		et = etime
+		st = st.replace(":00"," ")
+		st = st.replace(":30",".5") 
+		st = st.replace("am", "")
+		st = float(st.replace("pm","")) + 12	
+		et = et.replace(":00"," ")
+		et = et.replace(":30",".5")
+		et = et.replace("am","")
+		et = float(et.replace("pm","")) + 12
+		print st, "to", et	
+		data_special = (str(name), str(st), str(et), str(Drinks), str(Foods))
+	else:
+		pass
 	try:
 		x.execute(add_special,data_special)
 	except:
