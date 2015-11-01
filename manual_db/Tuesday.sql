@@ -1,8 +1,0 @@
-INSERT INTO `Tuesday` (`Restaurant_restname`,`stime`,`etime`,`food`,`drink`) VALUES ('Boulder Chophouse & Tavern','16','18','$10 Early Buff Special','$3 Draft Beer, $4 Glass of Wine and Well Drinks, $5 Specialty Cocktails');
-INSERT INTO `Tuesday` (`Restaurant_restname`,`stime`,`etime`,`food`,`drink`) VALUES ('Centro Latin Kitchen','15','18','$2-$4 Plates, $3 Tacos','$3 Ska Mexican Logger, $3 La Casa Marg, $4 Gold Coin Margarita, $2 Cuba Libres');
-INSERT INTO `Tuesday` (`Restaurant_restname`,`stime`,`etime`,`food`,`drink`) VALUES ('Hapa on Pearl','14.5','17.5','2 select rolls for $7, 1/2 Price Starters','$2.50 Hapa Beer, $3 Sake, $3.50 Specialty Drinks');
-INSERT INTO `Tuesday` (`Restaurant_restname`,`stime`,`etime`,`food`,`drink`) VALUES ("Illegal Pete's",'15','20','Free Chips and Salsa for Drinkers','$2.50 Coors Light and Draft, $3 Wells, $3.50 Select Craft Drafts, $4 House Margaritas');
-INSERT INTO `Tuesday` (`Restaurant_restname`,`stime`,`etime`,`food`,`drink`) VALUES ('Lazy Dog','15','18','$3 Appetizers','$2 Macrobrews, $3 Wells, $4 Micros, $4 House Wine');
-INSERT INTO `Tuesday` (`Restaurant_restname`,`stime`,`etime`,`food`,`drink`) VALUES ('Salt','15','18','$1-$6 Appetizers','$3 Select Beers, $4 Drafts and House Wine, $4/$5 Cocktails');
-INSERT INTO `Tuesday` (`Restaurant_restname`,`stime`,`etime`,`food`,`drink`) VALUES ('Sushi Hana','11','17.5','$2.95 Little Side Dishes, $7 2 Rolls','$3-$3.50 Beer, $3.50 Gekkeikan Sake, $3.50-$4.50 Cocktails');
-INSERT INTO `Tuesday` (`Restaurant_restname`,`stime`,`etime`,`food`,`drink`) VALUES ('The Attic Bar & Bistro','15','18','$2, $3, $5 Appetizers','$2 Wells, $2.50 Drafts, $3.75 Wine, $3 Fat Alberts, $2 "Best Day Ever" Fat Albert Shots');
