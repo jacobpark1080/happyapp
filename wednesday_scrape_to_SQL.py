@@ -12,7 +12,7 @@ gmap = {}
 timemap = {}
 drinkmap = {}
 foodmap = {}
-#WEDNESDAY
+# WEDNESDAY
 url = "http://www.therooster.com/happyhours/boulder#d=wednesday"
 r = requests.get(url)
 
@@ -78,12 +78,15 @@ for key in gmap.keys():
 		time2 = time2.split('-',1)
                 stime1 = time1[0]
 		stime2 = time2[0]
-                try:
-                        etime1 = time1[1]
-			etime2 = time2[1]
-                except:
-                        stime = "0:00"
-                        etime = "24:00"
+                # ALL DAY CASE CASE SHOULD NEVER BE REACHED
+		#try:
+                #        etime1 = time1[1]
+		#	etime2 = time2[1]
+                #except:
+                #        stime = "0:00"
+                #        etime = "24:00"
+		etime1 = time1[1]
+		etime2 = time2[1]
                 if (name != "Eggloo Delights "):
                         st1 = stime1
                         et1 = etime1
@@ -112,23 +115,35 @@ for key in gmap.keys():
                         print st2, "to", et2
 	else:
 		time = time.split('-',1)
+		print time
 	        stime = time[0] 
         	try:
                		etime = time[1]
         	except:
                		stime = "0:00"
                		etime = "24:00"
-        	if (name != "Eggloo Delights "):
-               		st = stime
+			st = float(stime[0])
+			et = float(etime[0] + etime[1])
+			print st, "to", et
+        	if (name != "Eggloo Delights ")	and etime != "24:00":
+			st = stime
                		et = etime
+			print st, et
                		st = st.replace(":00"," ")
                		st = st.replace(":30",".5")
-               		st = st.replace("am", "")
-               		st = float(st.replace("pm","")) + 12
+               		
+			am_flag = st.replace("am", "")
+			if st == am_flag + "am":
+				st = st.replace("am","")
+			else:
+               			st = float(st.replace("pm","")) + 12
                		et = et.replace(":00"," ")
                		et = et.replace(":30",".5")
-               		et = et.replace("am","")
-               		et = float(et.replace("pm","")) + 12
+               		am_flag = et.replace("am","")
+			if et == am_flag + "am":
+				et = et.replace("am","")
+			else:
+              			et = float(et.replace("pm","")) + 12
                		data_special = (str(name), str(st), str(et), str(Drinks), str(Foods))
                         print st, "to", et
 		else:
