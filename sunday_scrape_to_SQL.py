@@ -12,8 +12,8 @@ gmap = {}
 timemap = {}
 drinkmap = {}
 foodmap = {}
-#Monday
-url = "http://www.therooster.com/happyhours/boulder#d=monday"
+#SUNDAY
+url = "http://www.therooster.com/happyhours/boulder#d=sunday"
 r = requests.get(url)
 
 soup = BeautifulSoup(r.content, "lxml")
