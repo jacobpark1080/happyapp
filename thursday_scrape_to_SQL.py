@@ -34,7 +34,7 @@ for item in Info:
 		pass
 	i=i+1
 
-add_special = ("INSERT INTO Monday" 
+add_special = ("INSERT INTO Thursday" 
 			"(Restaurant_restname, stime, etime,food,drink)"
 			"VALUES (%s, %s, %s, %s, %s)")
 addrest = ("INSERT INTO Restaurant"
