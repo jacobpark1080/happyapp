@@ -43,7 +43,7 @@ addrest = ("INSERT INTO Restaurant"
 
 
 
-conn = MySQLdb.connect(host="localhost",user="root",db="mydb")
+conn = MySQLdb.connect(host="localhost",user="root",db="HappyApp")
 x = conn.cursor()
 
 for key in gmap.keys():
