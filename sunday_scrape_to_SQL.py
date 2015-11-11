@@ -12,8 +12,8 @@ gmap = {}
 timemap = {}
 drinkmap = {}
 foodmap = {}
-# SATURDAY
-url = "http://www.therooster.com/happyhours/boulder#d=saturday"
+# SUNDAY
+url = "http://www.therooster.com/happyhours/boulder#d=sunday"
 r = requests.get(url)
 
 soup = BeautifulSoup(r.content, "lxml")
@@ -34,7 +34,7 @@ for item in Info:
 		pass
 	i=i+1
 
-add_special = ("INSERT INTO Saturday" 
+add_special = ("INSERT INTO Sunday" 
 			"(Restaurant_restname, stime, etime,food,drink)"
 			"VALUES (%s, %s, %s, %s, %s)")
 addrest = ("INSERT INTO Restaurant"
