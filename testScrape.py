@@ -1,19 +1,20 @@
 #figure out what to do with multiple stimes and etimes
 #get address information
 
-
+import sys
 import requests
 from bs4 import BeautifulSoup
 import re
 import MySQLdb
 
-def main(dayofWeek):
+def testScrape(day):
+	dow = day
 	gmap = {}
 	timemap = {}
 	drinkmap = {}
 	foodmap = {}
 	#Monday
-	url = "http://www.therooster.com/happyhours/boulder#d=monday"
+	url = "http://www.therooster.com/happyhours/boulder#d=" + str(day)
 	r = requests.get(url)
 
 	soup = BeautifulSoup(r.content, "lxml")
@@ -24,6 +25,10 @@ def main(dayofWeek):
 		try:
 			restname = item.contents[1].text
 			gmap[i] = restname
+			if i == 0:
+				first = restname
+			if i == len(Info)-1:
+				last = restname
 		except:
 			pass
 		timemap[i] = item.contents[5].find_all("div", {"class" : "time"})[0].text
@@ -67,31 +72,106 @@ def main(dayofWeek):
 			Foods = Foods.replace('[ ]\+', '')
 		except:
 			pass
+		time_flag = False
+       		times = time.split(',',1)
+        	#print name
+        	if len(times) > 1:
+        	        time_flag = True
+        	        time1 = times[0]
+        	        time2 = times[1]
+        	        time1 = time1.split('-',1)
+        	        time2 = time2.split('-',1)
+        	        stime1 = time1[0]
+        	        stime2 = time2[0]
+                	etime1 = time1[1]
+                	etime2 = time2[1]
+                	if (name != "Eggloo Delights "):
+                	        st1 = stime1
+                	        et1 = etime1
+                	        st1 = st1.replace(":00"," ")
+                	        st1 = st1.replace(":30",".5")
+                	        st1 = st1.replace("am", "")
+                	        st1 = float(st1.replace("pm","")) + 12
+                	        et1 = et1.replace(":00"," ")
+                	        et1 = et1.replace(":30",".5")
+                	        et1 = et1.replace("am","")
+                	        et1 = float(et1.replace("pm","")) + 12
+                	        data_special1 = (str(name), str(st1), str(et1), str(Drinks), str(Foods))
+                	        st2 = stime2
+                	        et2 = etime2
+                	        st2 = st2.replace(":00"," ")
+                	        st2 = st2.replace(":30",".5")
+                	        st2 = st2.replace("am", "")
+                	        st2 = float(st2.replace("pm","")) + 12
+                	        et2 = et2.replace(":00"," ")
+                	        et2 = et2.replace(":30",".5")
+                	        et2 = et2.replace("am","")
+                	        et2 = float(et2.replace("pm","")) + 12
+                	        data_special2 = (str(name), str(st2), str(et2), str(Drinks), str(Foods))
 
-		time = time.split('-',1)
-		stime = time[0]
-		try:
-			etime = time[1]
-		except:
-			stime = "0:00"
-			etime = "24:00"
-		st = stime.replace("pm","")	
-		st = st.replace(":00"," ")
-		st = st.replace(":30",".5")
-		et = etime.replace("pm","")
-		et = et.replace(":00"," ")
-		et = et.replace(":30",".5")
+                	        #print st1, "to", et1
+                	        #print st2, "to", et2
+        	else:
+                	time = time.split('-',1)
+                	#print time
+                	stime = time[0]
+                	try:
+                	        etime = time[1]
+                	except:
+                	        stime = "0:00"
+                	        etime = "24:00"
+                	        st = float(stime[0])
+                	        et = float(etime[0] + etime[1])
+                	        #print st, "to", et
+                	if (name != "Eggloo Delights ") and etime != "24:00":
+                	        st = stime
+                	        et = etime
+                	        #print st, et
+                	        st = st.replace(":00"," ")
+				st = st.replace(":30",".5")
 
-		data_special = (str(name), str(st), str(et), str(Drinks), str(Foods))
-		try:
-			x.execute(add_special,data_special)
-		except:
-			pass
+                        	am_flag = st.replace("am", "")
+                        	if st == am_flag + "am":
+                        	        st = st.replace("am","")
+                        	else:
+                        	        st = float(st.replace("pm","")) + 12
+                        	et = et.replace(":00"," ")
+                        	et = et.replace(":30",".5")
+                        	am_flag = et.replace("am","")
+                        	if et == am_flag + "am":
+                        	        et = et.replace("am","")
+                        	else:
+                        	        et = float(et.replace("pm","")) + 12
+                        	data_special = (str(name), str(st), str(et), str(Drinks), str(Foods))
+                        	#print st, "to", et
+                	else:
+                	        pass
 
+        	try:
+			if name == first:
+                        	#print "IN HERE"
+                        	st_first = st
+                        	et_first = et
 
+			if name == last:
+				st_last = st
+				et_last = et
+
+                	if time_flag == True:
+                        	x.execute(add_special,data_special1)
+                        	x.execute(add_special,data_special2)
+                	else:
+                        	x.execute(add_special,data_special)
+        	except:
+                	pass
+        	#print
+	
 	x.close()
 	conn.commit()
 	conn.close()
+	return day, first, last, st_first, et_first, st_last, et_last
 
 if __name__ == '__main__':
-	sys.exit(main())
+	args = sys.argv
+	day = args[1]
+	sys.exit(testScrape(day))
