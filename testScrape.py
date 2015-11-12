@@ -49,7 +49,7 @@ def testScrape(day):
 
 
 
-	conn = MySQLdb.connect(user="root",db="mydb")
+	conn = MySQLdb.connect(user="root",db="HappyApp")
 	x = conn.cursor()
 
 	for key in gmap.keys():
