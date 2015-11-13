@@ -13,7 +13,7 @@ def testScrape(day):
 	timemap = {}
 	drinkmap = {}
 	foodmap = {}
-	#Monday
+	# FOR ANY DAY
 	url = "http://www.therooster.com/happyhours/boulder#d=" + str(day)
 	r = requests.get(url)
 
