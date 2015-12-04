@@ -93,7 +93,7 @@ h1 {
 }
 
 .rest_hour {
-    color: red;
+    color: black;
     text-align: right;
     float: right; 
     font-size: 30px;
@@ -125,7 +125,7 @@ $x = 0;
 $a = 0;
 $re = 0;
 
-$y = 17;
+$y = $hourStore[0];
 
 // while() loop to create a display 'card' for each happy hour event going on
 while($x < $count_row[0]){
