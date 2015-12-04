@@ -127,7 +127,7 @@ $re = 0;
 
 // while() loop to create a display 'card' for each happy hour event going on
 while($x < $count_row[0]){
-	if ($row[$x][2] > 1){ 
+	if ($row[$x][2] > $hourStore[0]){ 
 		$h = 250*$a+150;
 		echo   '<div class="info" style="top:'.$h.'px">';
 		echo     '<a class="rest_name">' . $row[$x][0] . '</a>';
