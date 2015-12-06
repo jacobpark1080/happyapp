@@ -60,7 +60,7 @@ body {
 .info {
     display: block;
     position: absolute;
-    background-color: yellow;
+    background-color: rgb(0,255,0);
     padding: 1% 2%;
     left: 6%;
     width: 1200px;
@@ -93,7 +93,7 @@ h1 {
 }
 
 .rest_hour {
-    color: red;
+    color: black;
     text-align: right;
     float: right; 
     font-size: 30px;
@@ -125,12 +125,24 @@ $x = 0;
 $a = 0;
 $re = 0;
 
+$y = $hourStore[0];
+
 // while() loop to create a display 'card' for each happy hour event going on
 while($x < $count_row[0]){
-	if ($row[$x][2] > 1){ 
+	if ($row[$x][2] > $hourStore[0]){ 
 		$h = 250*$a+150;
-		echo   '<div class="info" style="top:'.$h.'px">';
-		echo     '<a class="rest_name">' . $row[$x][0] . '</a>';
+		
+		if (abs($row[$x][2] - $y) > 2){		
+			echo   '<div class="info" style="top:'.$h.'px">';
+		}
+		
+		else if(abs($row[$x][2] - $y) >= 1){
+			echo   '<div class="info" style="top:'.$h.'px; background-color: yellow;">';
+		}
+
+		else{ echo    '<div class="info" style="top:'.$h.'px; background-color: red;">';}
+
+		echo   '<a class="rest_name">' . $row[$x][0] . '</a>';
 		if ($row[$x][2]%2 == 1) {
 			$re = 30;	
 			echo     '<a class="rest_hour">Get Happy At ' . $row[$x][1][0],$row[$x][1][1] . ':' . $re . ' - ' . $row[$x][2][0],$row[$x][2][1] . ':' . $re . '</a>';
