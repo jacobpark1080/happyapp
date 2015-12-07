@@ -25,7 +25,7 @@ V2.1	      -	Click for address functionality added
 2) How to Build and Run the Docs
 	a) Save files from the Github HappyApp master branch onto your local machine
 	b) Create a database called HappyApp on your local machine
-	c) Update addressesToSQL.py and specials_scrape_to_SQL.py so that database 		   username and password is your own
+	c) Update addressesToSQL.py and specials_scrape_to_SQL.py so that database username and password is your own
 	d) Run addressesToSQL.py and sepcials_scrape_to_SQL.py to load your database
 	e) Start a local php server and run happy2.php
 
