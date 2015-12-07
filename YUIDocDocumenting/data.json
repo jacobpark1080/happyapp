@@ -1,0 +1,96 @@
+{
+    "project": {},
+    "files": {
+        "addressScrape.js": {
+            "name": "addressScrape.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {},
+    "elements": {},
+    "classitems": [
+        {
+            "file": "addressScrape.js",
+            "line": 2,
+            "description": "moreElArr is where we search for the detailed data about each restaraunt, which includes the address",
+            "itemtype": "property",
+            "name": "moreElArr",
+            "type": "array",
+            "class": ""
+        },
+        {
+            "file": "addressScrape.js",
+            "line": 9,
+            "itemtype": "property",
+            "name": "i",
+            "type": "int",
+            "default": "0",
+            "class": ""
+        },
+        {
+            "file": "addressScrape.js",
+            "line": 16,
+            "description": "processed keeps track of which restaraunts have been processed",
+            "itemtype": "property",
+            "name": "processed",
+            "type": "hashtable",
+            "default": "{}",
+            "class": ""
+        },
+        {
+            "file": "addressScrape.js",
+            "line": 24,
+            "description": "processCurrentEl goes through and scrapes the restaraunt name and address for each restaraunt",
+            "itemtype": "event",
+            "name": "processCurrentEl",
+            "class": ""
+        },
+        {
+            "file": "addressScrape.js",
+            "line": 60,
+            "description": "savedData stores all the restaraunt and address data we've found",
+            "itemtype": "property",
+            "name": "savedData",
+            "type": "hashtable",
+            "default": "{}",
+            "class": ""
+        },
+        {
+            "file": "addressScrape.js",
+            "line": 68,
+            "description": "scrape extracts the restaraunt name and address from a particular restaraunt",
+            "itemtype": "event",
+            "name": "scrape",
+            "class": ""
+        },
+        {
+            "file": "addressScrape.js",
+            "line": 76,
+            "itemtype": "property",
+            "name": "addrEl",
+            "type": "String",
+            "class": ""
+        },
+        {
+            "file": "addressScrape.js",
+            "line": 82,
+            "itemtype": "property",
+            "name": "restarauntName",
+            "type": "String",
+            "class": ""
+        },
+        {
+            "file": "addressScrape.js",
+            "line": 93,
+            "description": "clickExit exits the current restaraunt screen",
+            "itemtype": "event",
+            "name": "clickExit",
+            "class": ""
+        }
+    ],
+    "warnings": []
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>addressScrape.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="../assets/css/logo.png" title="" width="117" height="52"></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: addressScrape.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+
+/**
+* moreElArr is where we search for the detailed data about each restaraunt, which includes the address
+* @property moreElArr
+* @type array
+*/
+var moreElArr = document.getElementsByClassName(&quot;more&quot;)
+
+/**
+* @property i
+* @type int
+* @default 0
+*/
+var i=0
+
+/**
+* processed keeps track of which restaraunts have been processed
+* @property processed
+* @type hashtable
+* @default {}
+*/
+var processed = {};
+
+/**
+* processCurrentEl goes through and scrapes the restaraunt name and address for each restaraunt
+* @event processCurrentEl
+*/
+
+function processCurrentEl(){
+	if(processed[i]) i++;
+	if(i &gt;= moreElArr.length) return;
+
+	console.log(&quot;Processing current element &quot;, i)
+
+	var el = moreElArr[i];
+	
+	//click
+	el.click();
+
+	//wait
+	setTimeout(function(){
+		scrape();
+		clickExit();
+
+		
+
+		setTimeout(function(){
+			//finished with this one
+			processed[i] = true;
+			i++;
+			//queue another click and scrape
+			processCurrentEl();
+		}, 1000)
+		
+		
+	}, 5000);
+
+}
+
+/**
+* savedData stores all the restaraunt and address data we&#x27;ve found
+* @property savedData
+* @type hashtable
+* @default {}
+*/
+var savedData = {};
+
+/**
+* scrape extracts the restaraunt name and address from a particular restaraunt
+* @event scrape
+*/
+function scrape(){
+	console.log(&quot;Scrape current element&quot;)
+
+	//get the restaraunt name
+	/**
+	@property addrEl
+	@type String
+	*/
+	var addrEl = document.getElementsByClassName(&quot;address&quot;)[0];
+
+	/**
+	@property restarauntName
+	@type String
+	*/
+	var restarauntName = document.getElementsByClassName(&quot;name&quot;)[0];
+
+	console.log(&quot;Found out that &quot;, restarauntName &amp;&amp; restarauntName.innerText, &quot; has the address: &quot;, addrEl &amp;&amp; addrEl.innerText)
+	//get the address
+	savedData[restarauntName &amp;&amp; restarauntName.innerText] = addrEl &amp;&amp; addrEl.innerText;
+}
+
+/**
+* clickExit exits the current restaraunt screen
+* @event clickExit
+*/
+
+function clickExit(){
+	console.log(&quot;Clicking exit&quot;)
+
+	//find exit button
+	//fire click
+	document.getElementsByClassName(&quot;close&quot;)[0].click()
+
+	//spin for a bit
+	a = 3;
+	for(var i =0; i &lt; 1000; i++)
+		 a = 2 * a;
+}
+
+processCurrentEl()
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
