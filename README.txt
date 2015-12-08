@@ -1,3 +1,5 @@
+Advertisement video was too large to push to repository. Follow this link to view: https://youtu.be/XIay1TTXlt0 
+
 HappyApp Description:
 Have you ever wondered what happy hours are happening at the exact moment you have that exact moment?
 Well, now there is a website that you can go to HappyApp. When you log in, the website takes in your
@@ -22,11 +24,37 @@ V2.1	      -	Click for address functionality added
 		Testing files included for scrape and database
 		Improved Website Design
 
-2) How to Build and Run the Docs
-	a) Save files from the Github HappyApp master branch onto your local machine
-	b) Create a database called HappyApp on your local machine
-	c) Update addressesToSQL.py and specials_scrape_to_SQL.py so that database username and password is your own
-	d) Run addressesToSQL.py and sepcials_scrape_to_SQL.py to load your database
-	e) Start a local php server and run happy2.php
+2) How to Build and Run HappyApp
+**FIRST DOWNLOAD NECESSARY PACKAGES**
+
+	a) clone the repo		git clone https://github.com/sniemeyer13/HappyApp	b) Open MySQL			mysql -u root -p
+	c) Source our database:		source happyappv2.1.sql
+	c) Update files to connect to your DB
+		in addressesToSQL.py (line 72)
+		in specials_scrape_to_SQL.py (line 50)
+		update to: 
+		conn = MySQLdb.connect(host="localhost",user=“FILL IN YOUR USERNAME”,passed = “FILL IN YOUR PASSWORD”,db="HappyApp")
+	d) Load info into your database
+		python addressesToSQL.py 
+		python sepcials_scrape_to_SQL.py
+	e) Start a php server in the HappyApp folder
+		php -S localhost:8000
+	f) Open HappyApp in internet browser
+		localhost:8000/happy2.php
+
+3) Testing
+	a) clone the repo		git clone https://github.com/sniemeyer13/HappyApp	b) Open MySQL			mysql -u root -p
+	c) Source our database:		source happyappv2.1.sql
+	c) Update files to connect to your DB
+		in addressesToSQL.py (line 72)
+		in specials_scrape_to_SQL.py (line 50)
+		in happy2.php (line 6)
+		update to: 
+		conn = MySQLdb.connect(host="localhost",user=“FILL IN YOUR USERNAME”,passed = “FILL IN YOUR PASSWORD”,db="HappyApp")
+	d) Load info into your database
+		python addressesToSQL.py 
+		python sepcials_scrape_to_SQL.py
+	e) Run the tests
+		python Scrape_test.py		python DBTest.py
 
 	  	

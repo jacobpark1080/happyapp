@@ -3,7 +3,7 @@
 <?php
 
 // Create a MySQL user named: HappyApp with password: password and source the HappyApp database to it
-$conn = new mysqli("localhost", "HappyApp", "password", "HappyApp");
+$conn = new mysqli("127.0.0.1", "root", "" , "HappyApp");
 
 if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
